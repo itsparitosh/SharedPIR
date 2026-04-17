@@ -46,109 +46,62 @@ Go to the respective protocol folder and run:
 ./run_p4.sh <db_size> <operations>
 
 ---
-
-## Example Runs and Outputs
-
-### Protocol 1
-Command:
-./run_pir.sh 20 5
-
-Output (sample):
-Starting Test
-DB Size: 2^20
-Operations: 5
-
-[Client] Connected. DB Size: 2^20 (1048576 rows) | Operations: 5
-
-Op 1/5 [Reading Idx: 397876] [OK]  
-Op 2/5 [Reading Idx: 397876] [OK]  
-...
-
-**READ RESULTS:**
-Total Ops: 5  
-Avg Query Time: 0.0168 ms  
-Avg Server Respond: ~19 ms  
-Avg Reconstruct Time: ~31 ms  
-Upload / Op: 4480 Bytes  
-Download / Op: 32 Bytes  
-
----
-
-### Protocol 2
-Command:
-./run_p2.sh 20 5
-
-Output (sample):
-Starting Test
-DB Size: 2^20
-Operations: 5
-
-[Client] Connected to 4 parties
-
-Read Op 1/5 [OK]  
-Read Op 2/5 [OK]  
-...
-
-**READ RESULTS:**
-Total Operations: 5  
-Avg Query Time: ~0.01 ms  
-Avg Server DPF Time: ~20 ms  
-Avg Server XOR Time: ~13 ms  
-Upload / Op: 4356 Bytes  
-Download / Op: 72 Bytes  
-
----
-
-### Protocol 3
-Command:
-./run_p3.sh 20 5
-
-Output (sample):
-Starting Test
-DB Size: 2^20
-Operations: 5
-
-Op 1/5 [OK]
-  Write -> Query: ~0.12 ms  
-  Read  -> Query: ~0.04 ms  
-
-...
-
-**WRITE AVERAGES:**
-Avg Query Time: ~0.07 ms  
-Avg Server Eval: ~46 ms  
-
-**READ AVERAGES:**
-Avg Query Time: ~0.03 ms  
-Avg Server Eval: ~31 ms  
-Download / Op: 72 Bytes  
-
----
-
-### Protocol 4
-Command:
+**Command:**
+```bash
 ./run_p4.sh 20 5
 
-Output (sample):
-Starting Test
-DB Size: 2^20
-Operations: 5
+**Output:**
+================================================
+ Compiling.....
+=================================================
+=================================================
+ Starting Test
+ DB Size: 2^20
+ Operations: 5
+=================================================
+[Script] Servers started in background. Waiting 1 second for ports to bind...
+[Script] Starting Client...
+-------------------------------------------------
 
-Op 1/5 [OK]
-  Write Stats -> Query: ~0.07 ms  
-  Read Stats  -> Query: ~0.06 ms  
+[Client] Connected to 4 parties. DB Size: 1048576 | Columns: 3 | Read Ops: 5
+[Client] Executing Warmup (practice run)... Done!
 
-...
+Read Op 1/5 [Idx: 584218] [OK] Data: [584219, 584220, 584221]
+  └─ Read Timings  -> Query: 0.035ms | DPF Eval: 18.966ms | XOR: 12.959ms | Recon: 0.005ms
+  └─ Network Costs -> Up: 4356 B | Down: 72 B
 
-**WRITE AVERAGES:**
-Avg Query Time: ~0.05 ms  
-Avg Server DPF Eval: ~36 ms  
+Read Op 2/5 [Idx: 440272] [OK] Data: [440273, 440274, 440275]
+  └─ Read Timings  -> Query: 0.025ms | DPF Eval: 28.945ms | XOR: 18.087ms | Recon: 0.002ms
+  └─ Network Costs -> Up: 4356 B | Down: 72 B
 
-**READ AVERAGES:**
-Avg Query Time: ~0.04 ms  
-Avg Server DPF Eval: ~30 ms  
-Download / Op: 24 Bytes  
+Read Op 3/5 [Idx: 539618] [OK] Data: [539619, 539620, 539621]
+  └─ Read Timings  -> Query: 0.023ms | DPF Eval: 31.029ms | XOR: 19.079ms | Recon: 0.002ms
+  └─ Network Costs -> Up: 4356 B | Down: 72 B
 
+Read Op 4/5 [Idx: 838098] [OK] Data: [838099, 838100, 838101]
+  └─ Read Timings  -> Query: 0.022ms | DPF Eval: 29.667ms | XOR: 18.306ms | Recon: 0.001ms
+  └─ Network Costs -> Up: 4356 B | Down: 72 B
+
+Read Op 5/5 [Idx: 388192] [OK] Data: [388193, 388194, 388195]
+  └─ Read Timings  -> Query: 0.022ms | DPF Eval: 20.105ms | XOR: 12.950ms | Recon: 0.001ms
+  └─ Network Costs -> Up: 4356 B | Down: 72 B
+
+================ READ RESULTS ===================
+Total Operations      : 5
+Total Key Gen Time    : 0.1269 ms
+-------------------------------------------------
+Avg Query Time        : 0.0254 ms
+Avg Server DPF Time   : 25.7424 ms
+Avg Server XOR Time   : 16.2762 ms
+Avg Reconstruct Time  : 0.0023 ms
+-------------------------------------------------
+Avg Upload / Op       : 4356 Bytes
+Avg Download / Op     : 72 Bytes
+=================================================
+-------------------------------------------------
+[Script] Test execution completed.
+
+[Script] Cleaning up background server processes...
 ---
 
 ## Notes
