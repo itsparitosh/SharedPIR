@@ -20,7 +20,7 @@ This means:
 
 The repository contains the following protocols:
 
-- Protocol 1: Hafiz-Henry Protocol  
+- Hafiz-Henry Protocol  
 - Protocol 2  
 - Protocol 3  
 - Protocol 4  
@@ -33,7 +33,7 @@ Each protocol has its own script file for execution.
 
 Go to the respective protocol folder and run:
 
-### Protocol 1 (Hafiz-Henry)
+### Hafiz-Henry
 ./run_pir.sh <db_size> <operations>
 
 ### Protocol 2
@@ -51,21 +51,21 @@ Go to the respective protocol folder and run:
 
 ### Protocol 1
 Command:
-./run_pir.sh 20 3
+./run_pir.sh 20 5
 
 Output (sample):
 Starting Test
 DB Size: 2^20
-Operations: 3
+Operations: 5
 
-[Client] Connected. DB Size: 2^20 (1048576 rows) | Operations: 3
+[Client] Connected. DB Size: 2^20 (1048576 rows) | Operations: 5
 
-Op 1/3 [Reading Idx: 397876] [OK]  
-Op 2/3 [Reading Idx: 184544] [OK]  
-Op 3/3 [Reading Idx: 479425] [OK]  
+Op 1/5 [Reading Idx: 397876] [OK]  
+Op 2/5 [Reading Idx: 397876] [OK]  
+...
 
-READ RESULTS:
-Total Ops: 3  
+**READ RESULTS:**
+Total Ops: 5  
 Avg Query Time: 0.0168 ms  
 Avg Server Respond: ~19 ms  
 Avg Reconstruct Time: ~31 ms  
@@ -89,7 +89,7 @@ Read Op 1/5 [OK]
 Read Op 2/5 [OK]  
 ...
 
-RESULTS:
+**READ RESULTS:**
 Total Operations: 5  
 Avg Query Time: ~0.01 ms  
 Avg Server DPF Time: ~20 ms  
@@ -114,11 +114,11 @@ Op 1/5 [OK]
 
 ...
 
-WRITE AVERAGES:
+**WRITE AVERAGES:**
 Avg Query Time: ~0.07 ms  
 Avg Server Eval: ~46 ms  
 
-READ AVERAGES:
+**READ AVERAGES:**
 Avg Query Time: ~0.03 ms  
 Avg Server Eval: ~31 ms  
 Download / Op: 72 Bytes  
@@ -140,11 +140,11 @@ Op 1/5 [OK]
 
 ...
 
-WRITE AVERAGES:
+**WRITE AVERAGES:**
 Avg Query Time: ~0.05 ms  
 Avg Server DPF Eval: ~36 ms  
 
-READ AVERAGES:
+**READ AVERAGES:**
 Avg Query Time: ~0.04 ms  
 Avg Server DPF Eval: ~30 ms  
 Download / Op: 24 Bytes  
@@ -154,12 +154,11 @@ Download / Op: 24 Bytes
 ## Notes
 - Scripts automatically handle compilation and execution.
 - Servers are started and terminated within the scripts.
-- Some protocols include a warmup phase before measurements.
 
 ---
 
 ## Requirements
-- Linux environment (recommended)
+- Linux environment
 - Bash shell
 - GCC / standard build tools
 
