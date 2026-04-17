@@ -46,11 +46,9 @@ Go to the respective protocol folder and run:
 ./run_p4.sh <db_size> <operations>
 
 ---
-**Command:**
+## Command:
 ```bash
 ./run_p4.sh 20 5
-
-**Output:**
 ================================================
  Compiling.....
 =================================================
@@ -102,6 +100,7 @@ Avg Download / Op     : 72 Bytes
 [Script] Test execution completed.
 
 [Script] Cleaning up background server processes...
+```
 ---
 
 ## Notes
