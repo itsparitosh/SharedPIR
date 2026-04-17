@@ -11,7 +11,12 @@ fi
 POWER=$1
 NUM_OPS=$2
 
-echo "[Script] Compiling new_test.cpp..."
+# -------------------------------
+# 1. Compile the code
+# -------------------------------
+echo "================================================="
+echo " Compiling....."
+echo "================================================="
 
 # Compile with C++20, OpenMP, Pthreads, and optimizations
 g++ -std=c++20 -O3 -march=native -fopenmp -pthread -Wno-ignored-attributes main.cpp -o new_test
@@ -22,8 +27,14 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-echo "[Script] Compilation successful!"
-echo "[Script] Starting 4 Servers in background..."
+# -------------------------------
+# 2. Show parameters
+# -------------------------------
+echo "================================================="
+echo " Starting Test"
+echo " DB Size: 2^$POWER"
+echo " Operations: $NUM_OPS"
+echo "================================================="
 
 # 1. Start Servers (P1, P2, P3, P4)
 ./new_test p1 $POWER $NUM_OPS > /dev/null 2>&1 &

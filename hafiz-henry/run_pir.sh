@@ -16,7 +16,9 @@ NUM_OPS=$2
 # -------------------------------
 # 1. Compile the code
 # -------------------------------
-echo "=> Compiling the PIR code..."
+echo "================================================="
+echo " Compiling....."
+echo "================================================="
 g++ -std=c++20 -O3 -pthread -march=native -Wno-ignored-attributes main.cpp -o pir_test -lbsd
 
 if [ $? -ne 0 ]; then
@@ -27,11 +29,11 @@ fi
 # -------------------------------
 # 2. Show parameters
 # -------------------------------
-echo "=> Parameters:"
-echo "   POWER   = $POWER (Database size = 2^$POWER)"
-echo "   NUM_OPS = $NUM_OPS"
-
-echo "=> Starting 4 Database Servers in the background..."
+echo "================================================="
+echo " Starting Test"
+echo " DB Size: 2^$POWER"
+echo " Operations: $NUM_OPS"
+echo "================================================="
 
 # -------------------------------
 # 3. Launch servers

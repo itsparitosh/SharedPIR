@@ -193,7 +193,7 @@ awaitable<void> run_client(boost::asio::io_context& io, size_t nitems, int num_o
         co_await (p0 << op_kill); co_await (p1 << op_kill); 
         co_await (p2 << op_kill); co_await (p3 << op_kill);
 
-        std::cout << "\n================ METRICS ================" << std::endl;
+        std::cout << "\n================ READ RESULTS ================" << std::endl;
         std::cout << "Total Ops:            " << num_ops << std::endl;
         std::cout << "DB Size:              2^" << (int)(log2(nitems)) << " (" << nitems << ")" << std::endl;
         std::cout << "Avg Query Time:       " << std::fixed << std::setprecision(4) << (total_query_time / num_ops) << " ms" << std::endl;
