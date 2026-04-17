@@ -1,0 +1,17 @@
+Running on 8 cores.
+
+[Client] Connected. DB Size: 134217728 | Operations: 5
+[Client] Waiting for servers to initialize... Done!
+
+Op 1/5 [Idx: 77008936, Val: 248] [32m[OK][0m | Write: 260.70ms (Evalfull_w: 622.89ms) | Read: 141.10ms (Evallfull_r: 430.90ms)
+Op 2/5 [Idx: 57542836, Val: 353] [32m[OK][0m | Write: 128.68ms (Evalfull_w: 603.44ms) | Read: 177.72ms (Evallfull_r: 432.00ms)
+Op 3/5 [Idx: 27037290, Val: 179] [32m[OK][0m | Write: 133.20ms (Evalfull_w: 604.33ms) | Read: 174.78ms (Evallfull_r: 433.57ms)
+Op 4/5 [Idx: 74368904, Val: 137] [32m[OK][0m | Write: 153.78ms (Evalfull_w: 603.71ms) | Read: 148.62ms (Evallfull_r: 430.82ms)
+Op 5/5 [Idx: 64588933, Val: 341] [32m[OK][0m | Write: 156.92ms (Evalfull_w: 604.69ms) | Read: 148.42ms (Evallfull_r: 433.69ms)
+
+================ RESULTS ================
+Total Ops:      5
+DB Size:        2^27 (134217728)
+Avg Write Time: 166.66 ms
+Avg Read Time:  158.13 ms
+=========================================
